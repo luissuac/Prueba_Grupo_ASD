@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A8E116AB2D497AD900B6ED84 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A8E116AA2D497AD900B6ED84 /* Alamofire */; };
+		A8E116AD2D497AE100B6ED84 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A8E116AC2D497AE100B6ED84 /* SDWebImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A8E116842D4974F900B6ED84 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -33,7 +38,7 @@
 		A8E116952D4974F900B6ED84 /* Exceptions for "Prueba_Grupo_ASD" folder in "Prueba_Grupo_ASD" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = A8E1166C2D4974F500B6ED84 /* Prueba_Grupo_ASD */;
 		};
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E116AD2D497AE100B6ED84 /* SDWebImage in Frameworks */,
+				A8E116AB2D497AD900B6ED84 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +98,7 @@
 				A8E1166F2D4974F500B6ED84 /* Prueba_Grupo_ASD */,
 				A8E116862D4974F900B6ED84 /* Prueba_Grupo_ASDTests */,
 				A8E116902D4974F900B6ED84 /* Prueba_Grupo_ASDUITests */,
+				A8E116A92D497AD900B6ED84 /* Frameworks */,
 				A8E1166E2D4974F500B6ED84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +111,13 @@
 				A8E1168D2D4974F900B6ED84 /* Prueba_Grupo_ASDUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A8E116A92D497AD900B6ED84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +140,8 @@
 			);
 			name = Prueba_Grupo_ASD;
 			packageProductDependencies = (
+				A8E116AA2D497AD900B6ED84 /* Alamofire */,
+				A8E116AC2D497AE100B6ED84 /* SDWebImage */,
 			);
 			productName = Prueba_Grupo_ASD;
 			productReference = A8E1166D2D4974F500B6ED84 /* Prueba_Grupo_ASD.app */;
@@ -208,6 +225,10 @@
 			);
 			mainGroup = A8E116642D4974F500B6ED84;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A8E116A12D4975DE00B6ED84 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A8E116A22D49760D00B6ED84 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A8E1166E2D4974F500B6ED84 /* Products */;
 			projectDirPath = "";
@@ -291,9 +312,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7D89K3HM74;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Prueba_Grupo_ASD/Info.plist;
+				INFOPLIST_FILE = Prueba_Grupo_ASD/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -319,9 +340,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7D89K3HM74;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Prueba_Grupo_ASD/Info.plist;
+				INFOPLIST_FILE = Prueba_Grupo_ASD/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -569,6 +590,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8E116A12D4975DE00B6ED84 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		A8E116A22D49760D00B6ED84 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8E116AA2D497AD900B6ED84 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8E116A12D4975DE00B6ED84 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		A8E116AC2D497AE100B6ED84 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8E116A22D49760D00B6ED84 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8E116652D4974F500B6ED84 /* Project object */;
 }

@@ -32,33 +32,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-8q-vCT">
-                                <rect key="frame" x="16" y="159" width="361" height="659"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-8q-vCT">
+                                <rect key="frame" x="16" y="143" width="361" height="675"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hs2-I8-UK0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4Xv-kU-CXB"/>
-                                </connections>
-                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ape-Ux-Exr">
+                                <rect key="frame" x="20.000000000000007" y="103" width="120.66666666666669" height="32"/>
+                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XaM-8q-vCT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Ge-G9-WNb"/>
-                            <constraint firstItem="hs2-I8-UK0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6XS-bv-sr2"/>
-                            <constraint firstItem="hs2-I8-UK0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="96I-ta-FRI"/>
+                            <constraint firstItem="ape-Ux-Exr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FDg-Hq-PBa"/>
+                            <constraint firstItem="ape-Ux-Exr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lfs-lj-a2O"/>
+                            <constraint firstItem="XaM-8q-vCT" firstAttribute="top" secondItem="ape-Ux-Exr" secondAttribute="bottom" constant="8" symbolic="YES" id="MsB-oW-uoy"/>
                             <constraint firstItem="XaM-8q-vCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Osa-W2-y5s"/>
-                            <constraint firstItem="XaM-8q-vCT" firstAttribute="top" secondItem="hs2-I8-UK0" secondAttribute="bottom" id="R5i-x4-XhD"/>
-                            <constraint firstItem="hs2-I8-UK0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="miJ-lo-wMQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XaM-8q-vCT" secondAttribute="trailing" constant="16" id="ztN-ux-c6y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="d4m-U4-iFX"/>
+                    <navigationItem key="navigationItem" style="browser" id="d4m-U4-iFX"/>
                     <connections>
-                        <outlet property="searchBar" destination="hs2-I8-UK0" id="17a-w9-UvT"/>
                         <outlet property="tableView" destination="XaM-8q-vCT" id="Exz-0i-RTr"/>
                     </connections>
                 </viewController>

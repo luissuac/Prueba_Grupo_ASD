@@ -12,6 +12,15 @@ class DetalleViewController: UIViewController {
     
     private let user: User
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 30)
+        label.text = "Detalles"
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     init(user: User) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -27,8 +36,8 @@ class DetalleViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
-        title = "Detalles"
+        view.backgroundColor = #colorLiteral(red: 0.954229798, green: 0.954229798, blue: 0.954229798, alpha: 1)
+        //title = "Detalles"
         
         let containerView = UIView()
         containerView.backgroundColor = .white
@@ -58,12 +67,16 @@ class DetalleViewController: UIViewController {
         
         containerView.addSubview(avatarImageView)
         containerView.addSubview(stackView)
+        view.addSubview(titleLabel)
         view.addSubview(containerView)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),

@@ -8,9 +8,10 @@
 import UIKit
 import SDWebImage
 
-class PrincipalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class PrincipalViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let searchBar = UISearchBar()
 
     private let viewModel = PrincipalViewModel()
     private var filteredUsers: [User] = []
@@ -18,6 +19,7 @@ class PrincipalViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addTapGestureToDismissKeyboard()
         setupUI()
         setupBindings()
         viewModel.fetchUsers()
@@ -25,24 +27,23 @@ class PrincipalViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     private func setupUI() {
-        title = "Usuarios"
-        
-        // MARK: Configurar tabla
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .white
-        tableView.register(UserCell.self, forCellReuseIdentifier: "UserCell")
-        
+                       
         // MARK: Configurar barra de busqueda
         searchBar.delegate = self
         searchBar.placeholder = "Buscar por nombre"
         searchBar.searchBarStyle = .minimal
         searchBar.barTintColor = .darkGray
         searchBar.tintColor = .white
+        searchBar.sizeToFit()
         
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        // MARK: Configurar tabla
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tableView.register(UserCell.self, forCellReuseIdentifier: "UserCell")
+        tableView.tableHeaderView = searchBar
+        
     }
     
     private func setupBindings() {
@@ -56,6 +57,19 @@ class PrincipalViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
 
+    func addTapGestureToDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false // Permite que otros gestos sigan funcionando
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true) // Cierra el teclado
+    }
+
+}
+
+extension PrincipalViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredUsers.count
     }
@@ -80,5 +94,9 @@ class PrincipalViewController: UIViewController, UITableViewDataSource, UITableV
             filteredUsers = viewModel.users.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
